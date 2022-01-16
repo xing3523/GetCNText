@@ -13,7 +13,7 @@ enum LanguageType: String {
 }
 
 class LanguageManager: NSObject {
-    static var languageType: LanguageType = LanguageType(rawValue: UserDefaults.standard.string(forKey: "cacheLanguage") ?? "zh-Hans") ?? .cn {
+    static var languageType: LanguageType = .en {
         didSet {
             if languageType != oldValue {
                 currentLanguage = languageType.rawValue
@@ -23,7 +23,6 @@ class LanguageManager: NSObject {
 
     private static var currentLanguage: String =  languageType.rawValue {
         didSet {
-            UserDefaults.standard.setValue(currentLanguage, forKey: "cacheLanguage")
             currentBundle = Bundle(path: Bundle.main.path(forResource: currentLanguage, ofType: "lproj") ?? "")
             let app = UIApplication.shared.delegate as? AppDelegate
             app?.resetApp()
@@ -43,6 +42,12 @@ extension String {
     }
 }
 
-private func JJLocalized(_ key: String) -> String {
-    return NSLocalizedString(key, tableName: nil, bundle: LanguageManager.currentBundle ?? .main, value: "", comment: "")
+func JJLocalized(_ key: String) -> String {
+    let transKey = cnKeyDic[key] ?? key
+    return NSLocalizedString(transKey, tableName: nil, bundle: LanguageManager.currentBundle ?? .main, value: "", comment: "")
 }
+
+private let cnKeyDic:[String:String] = [
+    "设置": "exist_setting",
+    "苹果": "exist_apple",
+]

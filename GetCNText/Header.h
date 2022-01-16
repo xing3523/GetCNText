@@ -7,7 +7,6 @@
 
 #ifndef Header_h
 #define Header_h
-#import "GetCNText-Swift.h"
 #import "NSString+Category.h"
-
+#define JJLocalized(key) key.localizedString
 #endif /* Header_h */

@@ -9,10 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController1" customModule="GetCNText" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
                 <outlet property="stackView" destination="nVI-yB-TOh" id="87e-Lb-HvP"/>
-                <outlet property="titleLabel" destination="cNa-f7-wzH" id="nwW-Lf-Bcu"/>
                 <outlet property="view" destination="iN0-l3-epB" id="W5L-Q2-DzL"/>
             </connections>
         </placeholder>
@@ -22,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vSo-JI-tfD">
-                    <rect key="frame" x="0.0" y="100" width="414" height="733"/>
+                    <rect key="frame" x="0.0" y="63" width="414" height="769"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nVI-yB-TOh">
@@ -45,20 +44,10 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="gwr-4Y-OQA"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="FFR-g0-IU2"/>
                 </scrollView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xib标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNa-f7-wzH">
-                    <rect key="frame" x="178.5" y="59" width="57" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <constraints>
-                <constraint firstItem="cNa-f7-wzH" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="LCd-HU-WcA"/>
-                <constraint firstItem="cNa-f7-wzH" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="ZwN-I2-b57"/>
-            </constraints>
-            <point key="canvasLocation" x="13.043478260869566" y="94.419642857142847"/>
+            <point key="canvasLocation" x="14" y="95"/>
         </view>
     </objects>
     <resources>

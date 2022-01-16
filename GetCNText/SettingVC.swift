@@ -10,12 +10,16 @@ import UIKit
 class SettingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let changeToCNBtn = buttonWithTitle(title: (LanguageManager.languageType == LanguageType.cn ? "✅ " : "") + "切换中文".localizedString)
-        changeToCNBtn.frame = CGRect(x: 80, y: 100, width: 200, height: 30)
+        let titleLabel = UILabel(frame: CGRect(x: 80, y: 40, width: 60, height: 30))
+        titleLabel.text = JJLocalized("设置")
+        view.addSubview(titleLabel)
+        
+        let changeToCNBtn = buttonWithTitle(title: (LanguageManager.languageType == LanguageType.cn ? "✅ " : "") + "切换中文")
+        changeToCNBtn.frame = CGRect(x: 0, y: 100, width: 200, height: 30)
         changeToCNBtn.addTarget(self, action: #selector(changeToCNClick), for: .touchUpInside)
-        let changeToENBtn = buttonWithTitle(title: (LanguageManager.languageType == LanguageType.en ? "✅ " : "") + "切换英文".localizedString)
+        let changeToENBtn = buttonWithTitle(title: (LanguageManager.languageType == LanguageType.en ? "✅ " : "") + "切换英文")
         changeToENBtn.addTarget(self, action: #selector(changeToENClick), for: .touchUpInside)
-        changeToENBtn.frame = CGRect(x: 80, y: 140, width: 200, height: 30)
+        changeToENBtn.frame = CGRect(x: 0, y: 140, width: 200, height: 30)
         view.addSubview(changeToCNBtn)
         view.addSubview(changeToENBtn)
     }

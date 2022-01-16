@@ -11,7 +11,6 @@ import codecs
 # 搜寻以下文件类型
 suf_set = (".m", ".swift", ".xib", ".storyboard")
 # 项目路径
-# ../文件夹路径
 project_path = os.path.split(os.path.realpath(__file__))[0]
 
 def logYellow(str):
@@ -24,13 +23,15 @@ def logCyanLink(str):
     print("\033[4;36m%s\033[0m"%(str))
 
 # 忽略文件
-ignoreFileNames = ["main.m","JJLocalziedZHDictionaryAPI.m"]
+ignoreFileNames = ["LanguageManager.swift","LaunchScreen.storyboard"]
 # 比如批量处理过的类
 repairFileNames = [""]
 ignoreFileNames.extend(repairFileNames)
 
+separatorStr = "--*--"
 codeStr = {"",}
 xibStr = {"",}
+wholePathStr = {"",}
 codeCNNum = 0
 xibCNNum = 0
 logYellow("🛫️🛫️🛫️🛫️🛫️遍历开始🛫️🛫️🛫️🛫️🛫️")
@@ -48,7 +49,7 @@ for (root, dirs, files) in os.walk(project_path):
                     str = str.decode()
                     str = str.strip()
                     # log assert类型 忽略
-                    if  str.startswith("//") or str.startswith("DYYLog") or str.startswith("NSLog") or str.startswith("print") or str.startswith("NSAssert"):
+                    if  str.startswith("//") or str.startswith("DYYLog") or str.startswith("NSLog") or str.startswith("print") or str.startswith("NSAssert") or str.startswith("assert"):
                         continue
                     if str.startswith("/*"):
                         isComment = True
@@ -68,25 +69,23 @@ for (root, dirs, files) in os.walk(project_path):
                                 continue
                             isXibFile = ".xib" in file_name or ".storyboard" in file_name
                             if isXibFile:
-                                xibTip = "xib中文-->" + file_name + ":" + cnStr + "\n"
+                                xibTip = file_name + separatorStr + cnStr + "\n"
                                 if not xibTip in xibStr:
                                     xibCNNum = xibCNNum + 1
                                     logLightRed(xibTip.strip())
                                     xibStr.add(xibTip)
-                            newData = cnStr + "\n"
+                            newData = file_name + separatorStr + cnStr + "\n"
+                            wholePath = os.path.join(root, file_name) + separatorStr + cnStr + "\n"
                             # 去重
                             if not newData in codeStr:
+                                codeStr.add(newData)
                                 if not isXibFile:
                                     codeCNNum = codeCNNum + 1
-                                    logRed("代码中文-->" + file_name + ":" + newData.strip())
-                                codeStr.add(newData)
-#                                    codeStr.add(cnStr + "--x--" + file_name + "\n")
+                                    logRed(newData.strip())
+                                    wholePathStr.add(wholePath)
 
 logYellow("🛬️🛬️🛬️🛬️🛬️遍历结束🛬️🛬️🛬️🛬️🛬️")
 logRed("代码中文(去重)：%d处, xib中文(去重)：%d处"%(codeCNNum,xibCNNum))
-
-list1 = list(codeStr)
-list2 = list(xibStr)
 
 def writeFile(path, data):
     if os.path.exists(path):
@@ -96,9 +95,13 @@ def writeFile(path, data):
         f2.writelines(data)
         f2.close()
 
-file_path1 = project_path + "/py_cnStr.xlsx"
-file_path2 = project_path + "/py_cnStr.txt"
-xibTipPath = project_path + "/py_xibCnStr.txt"
+file_path1 = project_path + "/py_cnStr.txt"
+xibTipPath = project_path + "/py_xibCnStr.xlsx"
+whole_path = project_path + "/py_cn_wholePath.txt"
+list1 = list(codeStr)
+list2 = list(xibStr)
+list3 = list(wholePathStr)
+
 writeFile(file_path1, list1)
-writeFile(file_path2, list1)
 writeFile(xibTipPath, list2)
+writeFile(whole_path, list3)

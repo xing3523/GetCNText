@@ -10,6 +10,7 @@ import UIKit
 class ViewController1: UIViewController {
 
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLayoutSubviews() {
         if let scrollView = stackView.superview as? UIScrollView {
@@ -20,23 +21,21 @@ class ViewController1: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stackView.arrangedSubviews.first?.removeFromSuperview()
-        addText("中文1".localizedString)
-        addText("11221")
-        addText("中文2")
-        addText("中文3")
-        
+        assert(true, "断言提示")
+        addText("苹果".localizedString)
+        addText(JJLocalized("苹果"))
+        addText("晚上好")
+        addText("1111")
+        addText("早安")
+        addText("晚安")
+        addText("测试\n换行")
+        addText(String(format: "“特殊字符”%@%d个", "有",2))
+        print("输出log")
         // Do any additional setup after loading the view.
     }
     
     func addText(_ text:String) {
-        stackView.addArrangedSubview(labelWithTitle(text))
-    }
-    
-    func labelWithTitle(_ title:String) -> UILabel {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = title
-        return label
+        stackView.addArrangedSubview(UILabel.labelWithTitle(text))
     }
 
     /*

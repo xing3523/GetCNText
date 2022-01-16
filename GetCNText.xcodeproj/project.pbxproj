@@ -13,6 +13,9 @@
 		21056B84278FF7B000109716 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21056B86278FF7B000109716 /* Localizable.strings */; };
 		21056B8A278FF7F300109716 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21056B8C278FF7F300109716 /* InfoPlist.strings */; };
 		21056B92278FFF1400109716 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 21056B91278FFF1400109716 /* NSString+Category.m */; };
+		21056B9527903B6800109716 /* py_cnStr.txt in Resources */ = {isa = PBXBuildFile; fileRef = 21056B9427903B6800109716 /* py_cnStr.txt */; };
+		21056B9827903DD000109716 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21056B9727903DD000109716 /* ViewController.xib */; };
+		21056B9B27903E3800109716 /* SwiftCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21056B9A27903E3800109716 /* SwiftCommon.swift */; };
 		21899567278ED7FE00AA3A59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21899566278ED7FE00AA3A59 /* AppDelegate.m */; };
 		2189956D278ED7FE00AA3A59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2189956C278ED7FE00AA3A59 /* ViewController.m */; };
 		21899572278ED80900AA3A59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21899571278ED80900AA3A59 /* Assets.xcassets */; };
@@ -24,15 +27,16 @@
 /* Begin PBXFileReference section */
 		21056B64278FCF3200109716 /* ViewController1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController1.xib; sourceTree = "<group>"; };
 		21056B68278FD36900109716 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
-		21056B77278FF43900109716 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		21056B78278FF44600109716 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		21056B7A278FF51B00109716 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		21056B85278FF7B000109716 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		21056B88278FF7B100109716 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		21056B8B278FF7F300109716 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		21056B8E278FF7F700109716 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		21056B90278FFF1400109716 /* NSString+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		21056B91278FFF1400109716 /* NSString+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		21056B9427903B6800109716 /* py_cnStr.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = py_cnStr.txt; sourceTree = "<group>"; };
+		21056B9727903DD000109716 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		21056B9A27903E3800109716 /* SwiftCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCommon.swift; sourceTree = "<group>"; };
+		21056BB2279169D400109716 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		21056BB3279169D400109716 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		21899562278ED7FE00AA3A59 /* GetCNText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetCNText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21899565278ED7FE00AA3A59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21899566278ED7FE00AA3A59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,14 +81,17 @@
 		21899564278ED7FE00AA3A59 /* GetCNText */ = {
 			isa = PBXGroup;
 			children = (
+				21056B9427903B6800109716 /* py_cnStr.txt */,
 				21899565278ED7FE00AA3A59 /* AppDelegate.h */,
 				21899566278ED7FE00AA3A59 /* AppDelegate.m */,
 				2189958A278EDC5F00AA3A59 /* ViewController1.swift */,
 				21056B64278FCF3200109716 /* ViewController1.xib */,
 				2189956B278ED7FE00AA3A59 /* ViewController.h */,
 				2189956C278ED7FE00AA3A59 /* ViewController.m */,
+				21056B9727903DD000109716 /* ViewController.xib */,
 				21056B68278FD36900109716 /* SettingVC.swift */,
 				21056B7A278FF51B00109716 /* LanguageManager.swift */,
+				21056B9A27903E3800109716 /* SwiftCommon.swift */,
 				21056B90278FFF1400109716 /* NSString+Category.h */,
 				21056B91278FFF1400109716 /* NSString+Category.m */,
 				21056B8C278FF7F300109716 /* InfoPlist.strings */,
@@ -157,6 +164,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21056B9827903DD000109716 /* ViewController.xib in Resources */,
+				21056B9527903B6800109716 /* py_cnStr.txt in Resources */,
 				21056B84278FF7B000109716 /* Localizable.strings in Resources */,
 				21056B8A278FF7F300109716 /* InfoPlist.strings in Resources */,
 				21899575278ED80900AA3A59 /* LaunchScreen.storyboard in Resources */,
@@ -174,6 +183,7 @@
 			files = (
 				21056B92278FFF1400109716 /* NSString+Category.m in Sources */,
 				2189956D278ED7FE00AA3A59 /* ViewController.m in Sources */,
+				21056B9B27903E3800109716 /* SwiftCommon.swift in Sources */,
 				2189958B278EDC5F00AA3A59 /* ViewController1.swift in Sources */,
 				21056B69278FD36900109716 /* SettingVC.swift in Sources */,
 				21056B7B278FF51B00109716 /* LanguageManager.swift in Sources */,
@@ -189,7 +199,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				21056B85278FF7B000109716 /* en */,
-				21056B88278FF7B100109716 /* zh-Hans */,
+				21056BB3279169D400109716 /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -198,7 +208,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				21056B8B278FF7F300109716 /* en */,
-				21056B8E278FF7F700109716 /* zh-Hans */,
+				21056BB2279169D400109716 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -207,8 +217,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				21899574278ED80900AA3A59 /* Base */,
-				21056B77278FF43900109716 /* zh-Hans */,
-				21056B78278FF44600109716 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
